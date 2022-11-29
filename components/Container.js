@@ -12,7 +12,7 @@ const Container = (props) => {
             rel="stylesheet"
             href="https://cdn.jsdelivr.net/npm/bootswatch@4.5.2/dist/flatly/bootstrap.min.css"
             integrity="sha384-qF/QmIAj5ZaYFAeQcrQ6bfVMAh4zZlrGwTPY7T/M+iTTLJqJBJjwwnsE5Y0mV7QK"
-            crossorigin="anonymous"/>
+            crossOrigin="anonymous"/>
         </Head>
       </div>
       <Nav />

@@ -8,8 +8,13 @@ const Index = (props) => {
   // console.log(name);
   const [name, setName] = useState("");
 
-  const addName = (name) => {
-    setName(name.toLowerCase().trim());
+  const addName = (value) => {
+    if (!value || !NaN(value)) {
+      return
+    } else{
+      setName(value.toLowerCase().trim());
+
+    }
   };
 
   return (
@@ -21,8 +26,9 @@ const Index = (props) => {
       <Container>
         <h1>POKEMON</h1>
         <>
-          <Form sendInput={addName} />
+          <Form sendName={addName} />
           <div>
+            <br/>
             <Cards cards={props.cards} />
           </div>
         </>
@@ -36,7 +42,7 @@ Index.getInitialProps = async (ctx) => {
       "X-Api-Key": "ddc44a25-06a6-4454-b51b-d921efe293e3",
     },
   });
-  const resJSON = await res.json();
-  return { cards: resJSON.data };
+  const resJSON = await res.json()
+  return {cards:resJSON.data}
 };
 export default Index;
